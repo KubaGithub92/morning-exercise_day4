@@ -1,10 +1,25 @@
 nav a {
   color: #dc143c;
   text-decoration: none;
+  position: relative;
   display: inline-block;
 }
 
-nav a:hover {
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #dc143c;
+  bottom: 0;
+  left: 0%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .about blockquote {
